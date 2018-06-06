@@ -54,15 +54,15 @@ const CheckBox = props => {
         {React.isValidElement(title)
           ? title
           : title && (
-              <TextElement
-                style={[
+          <TextElement
+            style={[
                   styles.text,
                   textStyle && textStyle,
                   fontFamily && { fontFamily },
                 ]}
-              >
-                {checked ? checkedTitle || title : title}
-              </TextElement>
+          >
+            {checked ? checkedTitle || title : title}
+          </TextElement>
             )}
 
         {iconRight && <CheckBoxIcon {...props} />}
@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     padding: 10,
+    paddingLeft: 30,
   },
   containerHasTitle: {
     borderWidth: 1,
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     borderColor: '#ededed',
   },
   text: {
-    marginLeft: 10,
+    marginLeft: 20,
     marginRight: 10,
     color: colors.grey1,
     ...Platform.select({

@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginLeft: 10,
     flex: 1,
-    height: 40,
+    height: 50,
   },
   error: {
     color: '#FF2D00',

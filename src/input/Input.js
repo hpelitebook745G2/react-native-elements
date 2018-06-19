@@ -99,6 +99,7 @@ class Input extends Component {
             ref={this._inputRef}
             underlineColorAndroid="transparent"
             style={[styles.input, inputStyle]}
+            placeholderTextColor={'#3D404D'}
           />
           {rightIcon && (
             <View style={[styles.iconContainer, rightIconContainerStyle]}>

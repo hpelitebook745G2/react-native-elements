@@ -66,6 +66,7 @@ class Input extends Component {
       errorMessage,
       labelStyle,
       label,
+      placeholderTextColor,
       ...attributes
     } = this.props;
     const translateX = this.shakeAnimationValue.interpolate({
@@ -99,7 +100,7 @@ class Input extends Component {
             ref={this._inputRef}
             underlineColorAndroid="transparent"
             style={[styles.input, inputStyle]}
-            placeholderTextColor={'#3D404D'}
+            placeholderTextColor={placeholderTextColor}
           />
           {rightIcon && (
             <View style={[styles.iconContainer, rightIconContainerStyle]}>
@@ -135,6 +136,12 @@ Input.propTypes = {
 
   label: PropTypes.string,
   labelStyle: Text.propTypes.style,
+
+  placeholderTextColor: PropTypes.string,
+};
+
+Input.defaultProps = {
+  placeholderTextColor: '#3D404D',
 };
 
 const styles = StyleSheet.create({
@@ -153,9 +160,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: 'black',
     fontSize: 18,
-    marginLeft: 10,
+    // marginVertical: 10,
     flex: 1,
-    height: 50,
+    // height: 50,
   },
   error: {
     color: '#FF2D00',

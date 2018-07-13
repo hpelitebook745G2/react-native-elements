@@ -105,11 +105,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   container: {
-    margin: 5,
-    marginLeft: 10,
-    marginRight: 10,
-    padding: 10,
-    paddingLeft: 30,
+    paddingRight: 10,
+    paddingLeft: 15,
+    paddingTop: 5,
   },
   containerHasTitle: {
     borderWidth: 1,
@@ -118,8 +116,7 @@ const styles = StyleSheet.create({
     borderColor: '#ededed',
   },
   text: {
-    marginLeft: 20,
-    marginRight: 10,
+    marginLeft: 5,
     color: colors.grey1,
     ...Platform.select({
       ios: {

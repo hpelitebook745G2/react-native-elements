@@ -157,10 +157,10 @@ SearchBar.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderBottomColor: '#000',
-    borderTopColor: '#000',
+    // borderTopWidth: 1,
+    // borderBottomWidth: 1,
+    // borderBottomColor: '#000',
+    // borderTopColor: '#000',
     backgroundColor: colors.grey0,
     padding: 8,
   },
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
     borderRadius: 3,
     overflow: 'hidden',
-    backgroundColor: colors.searchBg,
+    // backgroundColor: colors.searchBg,
     height: 30,
   },
   inputLight: {

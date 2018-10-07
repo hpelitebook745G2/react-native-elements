@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { ActivityIndicator, View, StyleSheet, Text } from 'react-native';
+import {
+  ActivityIndicator,
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import colors from '../config/colors';
 import renderNode from '../helpers/renderNode';
 import ViewPropTypes from '../config/ViewPropTypes';
@@ -75,6 +81,7 @@ class SearchBar extends Component {
     } = this.props;
     const { isEmpty } = this.state;
     const { style: loadingStyle, ...otherLoadingProps } = loadingProps;
+    console.log('clearIcon: ', clearIcon);
     return (
       <View
         style={[
@@ -104,7 +111,7 @@ class SearchBar extends Component {
             leftIconContainerStyle,
           ]}
           rightIcon={
-            <View style={{ flexDirection: 'row' }}>
+            <TouchableOpacity style={{ flexDirection: 'row' }}>
               {showLoading && (
                 <ActivityIndicator
                   style={[{ marginRight: 5 }, loadingStyle]}
@@ -112,7 +119,7 @@ class SearchBar extends Component {
                 />
               )}
               {!isEmpty && renderNode(Icon, clearIcon, defaultClearIcon)}
-            </View>
+            </TouchableOpacity>
           }
           rightIconContainerStyle={[
             styles.rightIconContainerStyle,
@@ -157,12 +164,10 @@ SearchBar.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    // borderTopWidth: 1,
-    // borderBottomWidth: 1,
-    // borderBottomColor: '#000',
-    // borderTopColor: '#000',
     backgroundColor: colors.grey0,
-    padding: 8,
+    paddingHorizontal: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   rightIconContainerStyle: {
     marginRight: 8,

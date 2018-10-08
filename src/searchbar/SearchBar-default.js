@@ -77,11 +77,12 @@ class SearchBar extends Component {
       showLoading,
       loadingProps,
       placeholderTextColor,
+      value,
       ...attributes
     } = this.props;
     const { isEmpty } = this.state;
     const { style: loadingStyle, ...otherLoadingProps } = loadingProps;
-    console.log('clearIcon: ', clearIcon);
+
     return (
       <View
         style={[
@@ -118,13 +119,14 @@ class SearchBar extends Component {
                   {...otherLoadingProps}
                 />
               )}
-              {!isEmpty && renderNode(Icon, clearIcon, defaultClearIcon)}
+              {value !== '' && renderNode(Icon, clearIcon, defaultClearIcon)}
             </TouchableOpacity>
           }
           rightIconContainerStyle={[
             styles.rightIconContainerStyle,
             rightIconContainerStyle,
           ]}
+          value={value}
         />
       </View>
     );
@@ -148,6 +150,7 @@ SearchBar.propTypes = {
   placeholderTextColor: PropTypes.string,
   lightTheme: PropTypes.bool,
   round: PropTypes.bool,
+  value: PropTypes.string,
 };
 
 SearchBar.defaultProps = {
@@ -160,6 +163,7 @@ SearchBar.defaultProps = {
   onFocus: () => null,
   onBlur: () => null,
   onChangeText: () => null,
+  value: '',
 };
 
 const styles = StyleSheet.create({
@@ -190,7 +194,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
     borderRadius: 3,
     overflow: 'hidden',
-    // backgroundColor: colors.searchBg,
     height: 30,
   },
   inputLight: {
